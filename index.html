@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LG4168[Violet]蒲公英" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/21/LG4168%5BViolet%5D%E8%92%B2%E5%85%AC%E8%8B%B1/">P4168[Violet]蒲公英</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/21/LG4168%5BViolet%5D%E8%92%B2%E5%85%AC%E8%8B%B1/" class="archive-article-date">
+  	<time datetime="2021-08-21T10:14:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="P4168-Violet-蒲公英"><a href="#P4168-Violet-蒲公英" class="headerlink" title="P4168[Violet]蒲公英"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4168">P4168[Violet]蒲公英</a></h3><h3 id="分块-前缀和"><a href="#分块-前缀和" class="headerlink" title="分块+前缀和"></a>分块+前缀和</h3><h3 id="块长-sqrt-3-n-比较快-sqrt-n-也能过"><a href="#块长-sqrt-3-n-比较快-sqrt-n-也能过" class="headerlink" title="块长$\sqrt[3]{n}$比较快, $\sqrt{n}$也能过"></a>块长$\sqrt[3]{n}$比较快, $\sqrt{n}$也能过</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IOR(x, y, z) for(int x = y; x &lt; z; x++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOR(x, y, z) for(int x = y; x &gt; z; x--)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MB=<span class="number">1</span>&lt;&lt;<span class="number">21</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FastIN</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> buf[MB+<span class="number">100</span>],*p,*e;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getChar</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(p==e) p=buf,e=buf+<span class="built_in">fread</span>(buf,<span class="number">1</span>,MB,stdin);</span><br><span class="line">		<span class="keyword">return</span> p==e?EOF:*p++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line">	FastIN&amp; <span class="keyword">operator</span>&gt;&gt;(T&amp; x)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> c,l;</span><br><span class="line">		<span class="keyword">for</span>(c=<span class="number">0</span>;!<span class="built_in">isdigit</span>(c);c=<span class="built_in">getChar</span>())l=c;</span><br><span class="line">		<span class="keyword">for</span>(x=<span class="number">0</span>;<span class="built_in">isdigit</span>(c);c=<span class="built_in">getChar</span>())x=x*<span class="number">10</span>-<span class="string">&#x27;0&#x27;</span>+c;</span><br><span class="line">		<span class="keyword">if</span>(l==<span class="string">&#x27;-&#x27;</span>)x=-x;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;IN;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> V(x) (Turn(A[x]))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">4e4</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXK = <span class="number">4e3</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> A[MAXN], B[MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> x;</span><br><span class="line"><span class="keyword">int</span> Cnt[MAXK][MAXN], L[MAXN], R[MAXN], Pos[MAXN], Qcnt[MAXK][MAXN];</span><br><span class="line"><span class="keyword">int</span> idx, n, m, len, num;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pre</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Turn</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Ask</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; <span class="comment">/**/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL </span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;In.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;Out.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    IN &gt;&gt; n &gt;&gt; m; len = <span class="built_in">pow</span>(n, <span class="number">1.0</span> / <span class="number">3.0</span>);</span><br><span class="line">    <span class="built_in">IOR</span>(i, <span class="number">1</span>, n+<span class="number">1</span>) IN &gt;&gt; A[i], B[i] = A[i];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(B+<span class="number">1</span>, B+n+<span class="number">1</span>);</span><br><span class="line">    idx = <span class="built_in">unique</span>(B+<span class="number">1</span>, B+n+<span class="number">1</span>) - B - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Pre</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> l, r; IN &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        l = (l + x - <span class="number">1</span>) % n + <span class="number">1</span>, r = (r + x - <span class="number">1</span>) % n + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; r) <span class="built_in">swap</span>(l, r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, x = <span class="built_in">Ask</span>(l, r));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; <span class="comment">/**/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Turn</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">lower_bound</span>(B+<span class="number">1</span>, B+idx+<span class="number">1</span>, x) - B; &#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pre</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    num = n / len;</span><br><span class="line">    <span class="built_in">IOR</span>(i, <span class="number">1</span>, num+<span class="number">1</span>) </span><br><span class="line">        L[i] = (i<span class="number">-1</span>) * len + <span class="number">1</span>,</span><br><span class="line">        R[i] = i * len;</span><br><span class="line">    <span class="keyword">if</span>(R[n/len] &lt; n) L[++num] = R[n/len]+<span class="number">1</span>, R[num] = n;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">IOR</span>(i, <span class="number">1</span>, num+<span class="number">1</span>) <span class="built_in">IOR</span>(v, L[i], R[i] + <span class="number">1</span>) </span><br><span class="line">        Pos[v] = i, Cnt[i][<span class="built_in">V</span>(v)]++;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">IOR</span>(i, <span class="number">1</span>, num+<span class="number">1</span>) <span class="built_in">IOR</span>(v, <span class="number">1</span>, idx+<span class="number">1</span>) </span><br><span class="line">        Qcnt[i][v] = Qcnt[i<span class="number">-1</span>][v] + Cnt[i][v];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Ask</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Tcnt[MAXN]; <span class="built_in">memset</span>(Tcnt, <span class="number">0</span>, (idx+<span class="number">1</span>) * <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">int</span> p = Pos[l], q = Pos[r];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(p == q) </span><br><span class="line">        <span class="built_in">IOR</span>(i, l, r+<span class="number">1</span>) Tcnt[<span class="built_in">V</span>(i)]++;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">IOR</span>(v, <span class="number">1</span>, idx+<span class="number">1</span>)</span><br><span class="line">            Tcnt[v] = Qcnt[q<span class="number">-1</span>][v] - Qcnt[p][v], </span><br><span class="line">            Tcnt[v] = Tcnt[v] &gt;= <span class="number">0</span> ? Tcnt[v] : <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">IOR</span>(i, l, R[p]+<span class="number">1</span>) Tcnt[<span class="built_in">V</span>(i)]++;</span><br><span class="line">        <span class="built_in">IOR</span>(i, L[q], r+<span class="number">1</span>) Tcnt[<span class="built_in">V</span>(i)]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> mx = <span class="number">0</span>, res = INF;</span><br><span class="line">    <span class="built_in">IOR</span>(i, <span class="number">1</span>, idx+<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(Tcnt[i] &gt; mx) mx = Tcnt[i], res = B[i];                                                                                                       </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">if</span>(Tcnt[i] == mx) res = <span class="built_in">min</span>(res, B[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分块</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/21/LG4168%5BViolet%5D%E8%92%B2%E5%85%AC%E8%8B%B1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-POJ3468" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -199,11 +276,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模版</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分块</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分块</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模版</a>
         		</li>
       		
 		</ul>
@@ -442,11 +519,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模版</a>
+                <a href="javascript:void(0)" class="js-tag color3">分块</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">分块</a>
+                <a href="javascript:void(0)" class="js-tag color4">前缀和</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模版</a>
               </li>
             
             <div class="clearfix"></div>
